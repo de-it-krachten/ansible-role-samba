@@ -1,4 +1,6 @@
-#/etc/samba/smb.conf
+
+# This file is managed by Ansible !!!
+
 [global]
     workgroup = WORKGROUP
     server string = %h server (Samba, Ubuntu)
@@ -21,8 +23,8 @@
 
 {% for share in samba_shares %}
 [{{ share.name }}]
-{%- for key, value in share.settings.items() %}
+{% for key, value in share.settings.items() %}
     {{ key | regex_replace('__', ' ') }} = {{ value }}
-{%- endfor %}
+{% endfor %}
 
 {% endfor %}

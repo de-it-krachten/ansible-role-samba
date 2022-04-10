@@ -72,6 +72,7 @@
 - name: List all samba users
   command: pdbedit -L
   changed_when: false
+  check_mode: false
   register: _samba_users
 
 - name: Create all samba users that do not exist
