@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.1.1...v1.1.2) (2022-04-10)
+
+
+### Bug Fixes
+
+* only create users w/ password ([f58e3ea](https://github.com/de-it-krachten/ansible-role-samba/commit/f58e3ea195031eae5552b974fed37fcbbe0c5663))
+* template format fixed ([d5f1311](https://github.com/de-it-krachten/ansible-role-samba/commit/d5f1311cc8e9cbcbcfbbbd0e537546dffe5ae3fe))
+
 ## [1.1.1](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.1.0...v1.1.1) (2022-03-21)
 
 
