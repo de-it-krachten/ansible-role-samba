@@ -74,7 +74,7 @@
   changed_when: false
   register: _samba_users
 
-- name: Create all samba users that do not exists
+- name: Create all samba users that do not exist
   shell: |
     set -o pipefail
     echo -e "{{ item.password }}\n{{ item.password }}\n" | \
@@ -82,7 +82,9 @@
   args:
     executable: /bin/bash
   register: smbpasswd
-  when: _samba_users.stdout is not search(item.name)
+  when:
+    - item.password is defined
+    - _samba_users.stdout is not search(item.name)
   loop: "{{ samba_users }}"
   loop_control:
     label: "{{ item.name }}"
