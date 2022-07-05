@@ -9,14 +9,17 @@ lint: |
   yamllint .
   ansible-lint
 platforms:
-  - name: samba-${MOLECULE_DISTRO:-centos8}
-    # image: "${namespace:-'geerlingguy'}/${image:-'docker-rockylinux-ansible'}:${tag:-'latest'}"
-    image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos8}-ansible:latest"
+{% for platform in MOLECULE_DISTROS %}
+  - name: samba-{{ platform.name }}
+    image: "{{ platform.image }}"
+    rhsm: {{ platform.rhsm | default(False) }}
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
+    privileged: {{ platform.privileged | default(True) }}
+    pre_build_image: {{ platform.pre_build_image | default(True) }}
+    dockerfile: Dockerfile.{{ platform.name }}.j2
+{% endfor %}
 provisioner:
   name: ansible
   env:
@@ -27,7 +30,7 @@ provisioner:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
   inventory:
     host_vars:
-      samba-centos8:
+      samba-rockylinux8:
         ansible_python_interpreter: /usr/libexec/platform-python
 scenario:
   name: default
