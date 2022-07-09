@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.1.2...v1.2.0) (2022-07-09)
+
+
+### Features
+
+* Add support for several newer platforms ([c7dddbf](https://github.com/de-it-krachten/ansible-role-samba/commit/c7dddbffa6a1b03e96bb6ceeaeddbcaab1edd08a))
+
 ## [1.1.2](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.1.1...v1.1.2) (2022-04-10)
 
 
