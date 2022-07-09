@@ -7,10 +7,6 @@ generic:
   role_description: |
     Install/configure samba
 
-github:
-  fail_fast: false
-  parallel: true
-
 molecule:
   prepare:
     vars:
