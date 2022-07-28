@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.2.0...v1.3.0) (2022-07-28)
+
+
+### Features
+
+* Implement ansible-lint v6 support ([1275fe5](https://github.com/de-it-krachten/ansible-role-samba/commit/1275fe584f83682fb06656f2c2254bad212cbbb2))
+
 # [1.2.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.1.2...v1.2.0) (2022-07-09)
 
 
