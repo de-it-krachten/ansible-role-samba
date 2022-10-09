@@ -16,7 +16,7 @@
 - name: Install samba packages
   ansible.builtin.package:
     name: "{{ samba_packages }}"
-    state: present 
+    state: present
 
 - name: Create samba configuration file from template
   ansible.builtin.template:
@@ -39,7 +39,7 @@
     owner: root
     group: root
     mode: '0755'
-    
+
 - name: Distribute custom samba scripts from non-template
   ansible.builtin.copy:
     src: "{{ item.src }}"

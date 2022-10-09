@@ -11,5 +11,5 @@
     samba_shares: [{'name': 'homes', 'settings': {'comment': 'Home Directories', 'browseable': 'yes', 'read__only': 'no', 'create__mask': '0700', 'directory__mask': '0700', 'valid__users': '%S', 'writeable': 'yes', 'public': 'yes', 'dfree__command': '/usr/local/bin/dfree'}}, {'name': 'private', 'settings': {'comment': 'private directories', 'browseable': 'no', 'public': 'no', 'dfree__command': '/usr/local/bin/dfree'}}]
   tasks:
     - name: Include role 'ansible-role-samba'
-      include_role:
+      ansible.builtin.include_role:
         name: ansible-role-samba
