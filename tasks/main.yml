@@ -1,7 +1,7 @@
 ---
 
 - name: Load variables based on OS type
-  include_vars: "{{ lookup('first_found', params) }}"
+  ansible.builtin.include_vars: "{{ lookup('first_found', params) }}"
   vars:
     params:
       files:
@@ -14,26 +14,26 @@
         - vars
 
 - name: Install samba packages
-  package:
+  ansible.builtin.package:
     name: "{{ samba_packages }}"
     state: present 
 
 - name: Create samba configuration file from template
-  template:
+  ansible.builtin.template:
     src: "{{ samba_conf }}"
     dest: /etc/samba/smb.conf
     mode: '0644'
   notify: Restart samba
 
 - name: Start samba services
-  service:
+  ansible.builtin.service:
     name: "{{ item }}"
     state: started
     enabled: yes
   loop: "{{ samba_services }}"
 
 - name: Copy dfree script
-  copy:
+  ansible.builtin.copy:
     src: dfree
     dest: "{{ samba_dfree_script }}"
     owner: root
@@ -41,7 +41,7 @@
     mode: '0755'
     
 - name: Distribute custom samba scripts from non-template
-  copy:
+  ansible.builtin.copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     owner: root
@@ -51,7 +51,7 @@
   when: item.src is not search('\.j2$')
 
 - name: Distribute custom samba scripts from template
-  template:
+  ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     owner: root
@@ -61,7 +61,7 @@
   when: item.src is search('\.j2$')
 
 - name: Ensure that the samba users exists
-  user:
+  ansible.builtin.user:
     name: "{{ item.name }}"
     state: present
   loop: "{{ samba_users }}"
@@ -70,13 +70,13 @@
   when: samba_create_users|bool
 
 - name: List all samba users
-  command: pdbedit -L
+  ansible.builtin.command: pdbedit -L
   changed_when: false
   check_mode: false
   register: _samba_users
 
 - name: Create all samba users that do not exist
-  shell: |
+  ansible.builtin.shell: |
     set -o pipefail
     echo -e "{{ item.password }}\n{{ item.password }}\n" | \
     smbpasswd -s -a {{ item.name }}
@@ -91,7 +91,7 @@
     label: "{{ item.name }}"
 
 - name: Manage samba firewall ports (netbios)
-  include_role:
+  ansible.builtin.include_role:
     name: firewall
   vars:
     firewall_ports: "{{ samba_firewall_ports_netbios }}"
@@ -100,7 +100,7 @@
     - samba_netbios|bool
 
 - name: Manage samba firewall ports (ActiveDirectory)
-  include_role:
+  ansible.builtin.include_role:
     name: firewall
   vars:
     firewall_ports: "{{ samba_firewall_ports_ad }}"
