@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.3.0...v1.4.0) (2022-10-12)
+
+
+### Features
+
+* Move to FQCN ([520fb90](https://github.com/de-it-krachten/ansible-role-samba/commit/520fb90e6173b6148f391dd860bbccfd6728309b))
+* Update CI to latest standards ([d3ddcac](https://github.com/de-it-krachten/ansible-role-samba/commit/d3ddcac76c08eae9a69f03a57ce2abd9443aae83))
+
 # [1.3.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.2.0...v1.3.0) (2022-07-28)
 
 
