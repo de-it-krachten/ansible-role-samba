@@ -6,6 +6,15 @@
 Install/configure samba
 
 
+
+## Dependencies
+
+#### Roles
+None
+
+#### Collections
+- community.general
+
 ## Platforms
 
 Supported platforms
@@ -75,6 +84,7 @@ samba_firewall_ports_ad:
   - { port: 445, proto: udp }
 </pre></code>
 
+
 ### vars/family-RedHat.yml
 <pre><code>
 # samba service
@@ -105,6 +115,6 @@ samba_services:
     samba_shares: [{'name': 'homes', 'settings': {'comment': 'Home Directories', 'browseable': 'yes', 'read__only': 'no', 'create__mask': '0700', 'directory__mask': '0700', 'valid__users': '%S', 'writeable': 'yes', 'public': 'yes', 'dfree__command': '/usr/local/bin/dfree'}}, {'name': 'private', 'settings': {'comment': 'private directories', 'browseable': 'no', 'public': 'no', 'dfree__command': '/usr/local/bin/dfree'}}]
   tasks:
     - name: Include role 'samba'
-      include_role:
+      ansible.builtin.include_role:
         name: samba
 </pre></code>
