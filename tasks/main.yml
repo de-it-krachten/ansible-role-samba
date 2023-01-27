@@ -92,7 +92,7 @@
 
 - name: Manage samba firewall ports (netbios)
   ansible.builtin.include_role:
-    name: firewall
+    name: deitkrachten.firewall
   vars:
     firewall_ports: "{{ samba_firewall_ports_netbios }}"
   when:
@@ -101,7 +101,7 @@
 
 - name: Manage samba firewall ports (ActiveDirectory)
   ansible.builtin.include_role:
-    name: firewall
+    name: deitkrachten.firewall
   vars:
     firewall_ports: "{{ samba_firewall_ports_ad }}"
   when:
