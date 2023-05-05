@@ -82,6 +82,7 @@
     smbpasswd -s -a {{ item.name }}
   args:
     executable: /bin/bash
+  changed_when: true
   register: smbpasswd
   when:
     - item.password is defined
