@@ -86,18 +86,18 @@ samba_firewall_ports_ad:
 </pre></code>
 
 
-### vars/family-RedHat.yml
-<pre><code>
-# samba service
-samba_services:
-  - smb
-</pre></code>
-
 ### vars/family-Debian.yml
 <pre><code>
 # samba service
 samba_services:
   - smbd
+</pre></code>
+
+### vars/family-RedHat.yml
+<pre><code>
+# samba service
+samba_services:
+  - smb
 </pre></code>
 
 
