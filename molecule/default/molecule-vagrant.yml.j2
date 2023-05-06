@@ -3,7 +3,7 @@
 dependency:
   name: galaxy
 driver:
-  name: docker
+  name: vagrant
 lint: |
   set -e
   yamllint .
@@ -13,14 +13,15 @@ lint: |
 platforms:
 {% for platform in MOLECULE_DISTROS %}
   - name: samba-{{ platform.name }}-node1
-    image: "{{ platform.image }}"
-    rhsm: {{ platform.rhsm | default(False) }}
-    command: ${MOLECULE_DOCKER_COMMAND:-""}
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: {{ platform.privileged | default(True) }}
-    pre_build_image: {{ platform.pre_build_image | default(True) }}
-    dockerfile: Dockerfile.{{ platform.name }}.j2
+    box: "{{ platform.box }}"
+    memory: {{ platform.memory | default(2048) }}
+    cpus: {{ platform.cpus | default(2) }}
+{% if platform.interfaces is defined %}
+    interfaces: {{ platform.interfaces }}
+{% endif %}
+    config_options:
+      ssh.keep_alive: yes
+      ssh.remote_user: "'vagrant'"
 {% endfor %}
 provisioner:
   name: ansible
