@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.4.0...v1.5.0) (2023-05-06)
+
+
+### Features
+
+* Move to namespaced role names ([4af2c1c](https://github.com/de-it-krachten/ansible-role-samba/commit/4af2c1c5af75cdcddf3c0251ad43db5ad722769d))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.3.0...v1.4.0) (2022-10-12)
 
 
