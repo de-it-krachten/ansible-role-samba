@@ -1,0 +1,5 @@
+---
+
+# samba service
+samba_services:
+  - smb
