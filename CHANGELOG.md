@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.6.0...v1.6.1) (2023-09-22)
+
+
+### Bug Fixes
+
+* Fix loop label to string ([8dfb892](https://github.com/de-it-krachten/ansible-role-samba/commit/8dfb8926a997282792a405927a9e84e051a048ec))
+
 # [1.6.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.5.0...v1.6.0) (2023-08-16)
 
 
