@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.6.1...v1.7.0) (2024-06-03)
+
+
+### Features
+
+* Add support for Ubuntu 24.04 LTS + Fedora 40 ([9f66ab6](https://github.com/de-it-krachten/ansible-role-samba/commit/9f66ab6219aa35f29ff2e55eaa555ce31e70fe06))
+
 ## [1.6.1](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.6.0...v1.6.1) (2023-09-22)
 
 
