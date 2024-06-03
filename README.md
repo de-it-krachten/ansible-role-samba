@@ -13,7 +13,7 @@ Install/configure samba
 None
 
 #### Collections
-- community.general
+None
 
 ## Platforms
 
@@ -31,13 +31,13 @@ Supported platforms
 - AlmaLinux 9
 - SUSE Linux Enterprise 15<sup>1</sup>
 - openSUSE Leap 15
-- Debian 10 (Buster)<sup>1</sup>
 - Debian 11 (Bullseye)
 - Debian 12 (Bookworm)
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 37
-- Fedora 38
+- Ubuntu 24.04 LTS
+- Fedora 39
+- Fedora 40
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -94,14 +94,14 @@ samba_services:
   - smbd
 </pre></code>
 
-### defaults/family-Suse.yml
+### defaults/family-RedHat.yml
 <pre><code>
 # samba service
 samba_services:
   - smb
 </pre></code>
 
-### defaults/family-RedHat.yml
+### defaults/family-Suse.yml
 <pre><code>
 # samba service
 samba_services:
@@ -116,13 +116,34 @@ samba_services:
 <pre><code>
 - name: sample playbook for role 'samba'
   hosts: all
-  become: "yes"
+  become: 'yes'
   vars:
-    samba_ad: True
-    samba_netbios: True
-    samba_create_users: True
-    samba_users: [{'name': 'user1', 'password': 'password1'}, {'name': 'user2', 'password': 'password2'}]
-    samba_shares: [{'name': 'homes', 'settings': {'comment': 'Home Directories', 'browseable': 'yes', 'read__only': 'no', 'create__mask': '0700', 'directory__mask': '0700', 'valid__users': '%S', 'writeable': 'yes', 'public': 'yes', 'dfree__command': '/usr/local/bin/dfree'}}, {'name': 'private', 'settings': {'comment': 'private directories', 'browseable': 'no', 'public': 'no', 'dfree__command': '/usr/local/bin/dfree'}}]
+    samba_ad: true
+    samba_netbios: true
+    samba_create_users: true
+    samba_users:
+      - name: user1
+        password: password1
+      - name: user2
+        password: password2
+    samba_shares:
+      - name: homes
+        settings:
+          comment: Home Directories
+          browseable: 'yes'
+          read__only: 'no'
+          create__mask: '0700'
+          directory__mask: '0700'
+          valid__users: '%S'
+          writeable: 'yes'
+          public: 'yes'
+          dfree__command: /usr/local/bin/dfree
+      - name: private
+        settings:
+          comment: private directories
+          browseable: 'no'
+          public: 'no'
+          dfree__command: /usr/local/bin/dfree
   tasks:
     - name: Include role 'samba'
       ansible.builtin.include_role:
