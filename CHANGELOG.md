@@ -1,3 +1,14 @@
+# [1.9.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.8.0...v1.9.0) (2025-08-07)
+
+
+### Features
+
+* Add support for AlmaLinux 10 ([0872d6f](https://github.com/de-it-krachten/ansible-role-samba/commit/0872d6f66ef5e2811f5a60415764ed6128d78504))
+* Add support for Debian 13 (Trixie) ([515cffc](https://github.com/de-it-krachten/ansible-role-samba/commit/515cffc7300352b108d79b6f8d34968318333453))
+* Add support for OracleLinux 10 ([109db2b](https://github.com/de-it-krachten/ansible-role-samba/commit/109db2becb4e3468e6f663b2d01c44b2252ce391))
+* Add support for Red Hat Enterprise Linux 10 ([7e8a5a0](https://github.com/de-it-krachten/ansible-role-samba/commit/7e8a5a0e603e237b0ac32e6457fd0f75c2d762bd))
+* Add support for RockyLinux 10 ([ec0d8b5](https://github.com/de-it-krachten/ansible-role-samba/commit/ec0d8b50329b925ed6a2126ca84b93a23f02e2cf))
+
 # [1.8.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.7.0...v1.8.0) (2024-12-29)
 
 
