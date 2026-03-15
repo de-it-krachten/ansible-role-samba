@@ -1,3 +1,13 @@
+# [1.10.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.9.0...v1.10.0) (2026-03-15)
+
+
+### Features
+
+* Added support for Fedora 43 ([2501004](https://github.com/de-it-krachten/ansible-role-samba/commit/2501004190532d3044a542fd251c6814ac39071c))
+* Drop support for Fedora 41 ([794ff85](https://github.com/de-it-krachten/ansible-role-samba/commit/794ff85c15ed5860902a54f4fa626013e9280239))
+* Drop support for openSUSE Leap 15 ([e00a3e3](https://github.com/de-it-krachten/ansible-role-samba/commit/e00a3e3c735e529d5d5425291c378cf9bf5ddc2b))
+* Drop support for SUSE Linux Enterprise 15 ([1eabd8b](https://github.com/de-it-krachten/ansible-role-samba/commit/1eabd8bbbc22e85ea870e05e787e32dade4e28ad))
+
 # [1.9.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.8.0...v1.9.0) (2025-08-07)
 
 
