@@ -7,6 +7,12 @@ generic:
   role_description: |
     Install/configure samba
 
+# Supported platforms
+platforms:
+  ubuntu2004:
+    supported: true
+    ci: true
+
 molecule:
   prepare:
     vars:
