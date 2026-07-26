@@ -1,3 +1,17 @@
+# [1.11.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.10.0...v1.11.0) (2026-07-26)
+
+
+### Bug Fixes
+
+* Standarize vars.yml ([71f1b10](https://github.com/de-it-krachten/ansible-role-samba/commit/71f1b10cdf15b85fd7c00fa0cdd3f225ca09e719))
+
+
+### Features
+
+* Added support for Fedora 44 ([a2728ff](https://github.com/de-it-krachten/ansible-role-samba/commit/a2728ffd55350c4d8469812e517487868264ca32))
+* Added support for Ubuntu 26.04 LTS ([cf4f996](https://github.com/de-it-krachten/ansible-role-samba/commit/cf4f9966c263f45c14d562d4282492931027fcdc))
+* Drop support for Fedora 42 ([ec79fe0](https://github.com/de-it-krachten/ansible-role-samba/commit/ec79fe0a4ca03b626dff248c40cfe4a909cf517a))
+
 # [1.10.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.9.0...v1.10.0) (2026-03-15)
 
 
