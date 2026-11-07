@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.11.0...v1.12.0) (2026-11-07)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([722401e](https://github.com/de-it-krachten/ansible-role-samba/commit/722401e388ed0140531798d856968a4260b64e30))
+
 # [1.11.0](https://github.com/de-it-krachten/ansible-role-samba/compare/v1.10.0...v1.11.0) (2026-07-26)
 
 
